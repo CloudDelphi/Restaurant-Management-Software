@@ -1,0 +1,164 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, jpeg, ExtCtrls;
+
+type
+  TfPagar = class(TForm)
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Image9: TImage;
+    Image10: TImage;
+    Image11: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Image12: TImage;
+    Image13: TImage;
+    Image14: TImage;
+    Image15: TImage;
+    Image16: TImage;
+    Image17: TImage;
+    Image18: TImage;
+    Image19: TImage;
+    Image20: TImage;
+    Image21: TImage;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label11: TLabel;
+    Image22: TImage;
+    Image23: TImage;
+    Image24: TImage;
+    procedure FormShow(Sender: TObject);
+    procedure Image12Click(Sender: TObject);
+    procedure Image13Click(Sender: TObject);
+    procedure Image14Click(Sender: TObject);
+    procedure Image15Click(Sender: TObject);
+    procedure Image16Click(Sender: TObject);
+    procedure Image17Click(Sender: TObject);
+    procedure Image18Click(Sender: TObject);
+    procedure Image19Click(Sender: TObject);
+    procedure Image20Click(Sender: TObject);
+    procedure Image21Click(Sender: TObject);
+    procedure Image23Click(Sender: TObject);
+    procedure Image22Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fPagar: TfPagar;
+
+implementation
+
+uses Unit6, Unit5;
+
+{$R *.dfm}
+
+procedure TfPagar.FormShow(Sender: TObject);
+var t:currency;
+begin
+t:=fpontovenda.ADOpedidostotal.AsCurrency;
+label11.caption:=currtostr(t);
+end;
+
+procedure TfPagar.Image12Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '1';
+end;
+
+procedure TfPagar.Image13Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '2';
+end;
+
+procedure TfPagar.Image14Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '3';
+end;
+
+procedure TfPagar.Image15Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '4';
+end;
+
+procedure TfPagar.Image16Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '5';
+end;
+
+procedure TfPagar.Image17Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '6';
+end;
+
+procedure TfPagar.Image18Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '7';
+end;
+
+procedure TfPagar.Image19Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '8';
+end;
+
+procedure TfPagar.Image20Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '9';
+end;
+
+procedure TfPagar.Image21Click(Sender: TObject);
+begin
+edit2.Text:= edit2.text + '0';
+end;
+
+procedure TfPagar.Image23Click(Sender: TObject);
+begin
+edit2.Text:= '';
+end;
+
+procedure TfPagar.Image22Click(Sender: TObject);
+var t:integer;
+    d:integer;
+    total:integer;
+begin
+
+    total:= strtoint(label11.caption);
+    d:= strtoint(edit2.Text);
+    t:= d-total;
+
+    Edit3.Text:=inttostr(t);
+end;
+
+procedure TfPagar.FormCreate(Sender: TObject);
+begin
+edit2.Text:='';
+edit3.Text:='';
+end;
+
+procedure TfPagar.Button1Click(Sender: TObject);
+begin
+   fFatura.showmodal;
+end;
+
+end.
